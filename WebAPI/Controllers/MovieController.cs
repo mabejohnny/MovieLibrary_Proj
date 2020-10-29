@@ -30,15 +30,20 @@ namespace WebAPISample.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
+
+            var movieToGet = _context.Movies.Where(c => c.MovieId == id).FirstOrDefault();
             // Retrieve movie by id from db logic
             // return Ok(movie);
-            return Ok();
+            return Ok(movieToGet);
         }
 
         // POST api/movie
         [HttpPost]
         public IActionResult Post([FromBody]Movie value)
         {
+            _context.Movies.Add(value);
+            _context.SaveChanges();
+
             // Create movie in db logic
             return Ok();
         }
