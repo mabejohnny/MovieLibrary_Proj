@@ -20,15 +20,16 @@ namespace WebAPISample.Controllers
         }
         // GET api/movie
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult GetAllMovies()
         {
+            var allMovies = _context.Movies.ToList();
             // Retrieve all movies from db logic
-            return Ok(new string[] { "movie1 string", "movie2 string" });
+            return Ok(allMovies);
         }
 
         // GET api/movie/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult GetOneMovie(int id)
         {
 
             var movieToGet = _context.Movies.Where(c => c.MovieId == id).FirstOrDefault();
