@@ -7,7 +7,7 @@
         };
 
         $.ajax({
-            url: 'http://localhost:5000/api/movie',
+            url: 'http://localhost:44325/api/movie',
             dataType: 'json',
             type: 'post',
             contentType: 'application/json',
