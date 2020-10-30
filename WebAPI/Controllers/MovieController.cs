@@ -20,7 +20,7 @@ namespace WebAPISample.Controllers
         }
         // GET api/movie
         [HttpGet]
-        public IActionResult GetAllMovies()
+        public IActionResult Get()
         {
             var allMovies = _context.Movies.ToList();
             // Retrieve all movies from db logic
@@ -29,7 +29,7 @@ namespace WebAPISample.Controllers
 
         // GET api/movie/5
         [HttpGet("{id}")]
-        public IActionResult GetOneMovie(int id)
+        public IActionResult Get(int id)
         {
 
             var movieToGet = _context.Movies.Where(c => c.MovieId == id).FirstOrDefault();
