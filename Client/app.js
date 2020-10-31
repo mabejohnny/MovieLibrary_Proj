@@ -32,29 +32,40 @@ $(document).ready(
     getMovies());
 
 
-function deleteMovie(value){
+function editMovie(id){
+    
+    var person = new Object();
+    let title =prompt("please enter the movie title");
+    let director =prompt ("please enter the movie director");
+    let genre =prompt("please enter the movie genre");
+    var dict = {
+        Title: title,
+        Director: director,
+        Genre: genre
+    };
 
     
-
     $.ajax({
-        url: `https://localhost:44325/api/movie/${value}`,
+        
+        url: `https://localhost:44325/api/movie/${id}`,
         dataType: 'json',
-        type: 'delete',
+        type: 'put',
         contentType: 'application/json',
-        data: JSON.stringify({}),
+        data: JSON.stringify(dict),
         success: function(data, textStatus, jQxhr ){
+            console.log(movieId);
+           alert("movie has been edited");
             
-            alert("The movie has been deleted");
-            
-
         },       
         error: function( jqXhr, textStatus, errorThrown ){
         console.log( errorThrown );
     
 }
+
 });
 }
 function getMovies(){
+    
     $.ajax({
         url: 'https://localhost:44325/api/movie',
         dataType: 'json',
@@ -64,16 +75,14 @@ function getMovies(){
             //$('#response pre').html( JSON.stringify(data) );
             
             data.map(function(value){
-                console.log(value.movieId);
+                
                 $("#allMoviesTable").append(
                     `<tr>
                         <td>${value.title}</td>
                         <td>${value.director}</td>
                         <td>${value.genre}</td>
                         <td>
-                        
-                            <button>Edit</button>
-                            <button onclick ='deleteMovie(${value.movieId})'>Delete</button>
+                            <button onclick ='editMovie(${value.movieId})'>Edit</button>
                         </td>
                     </tr>`
                 )
