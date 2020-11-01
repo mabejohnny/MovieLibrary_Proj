@@ -1,40 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>jQuery AJAX POST Form</title>
+    <title>Movie Library</title>
     <meta charset="utf-8">
     <link rel= "stylesheet" href="stylesheet.css">
         <link rel= "styleSheet" href = "bootstrap.css">
         <title>Movie Library</title>
 </head>
 <body>
-    <H1>Welcome to our Movie Library</H1>
-<h5> Add A Movie To The Library</h5>
+    <H1 style = "text-align: center;">Welcome To Our Movie Library</H1>
+    <br>
+    <br>
+    <br>
+</div>
+<div style = "text-align: center;">
+<img src = "images/img_4324.jpg" alt =" Move picture">
+</div>
+<br>
+<h5 style = "text-align: center;"> Add A Movie To The Library</h5>
 <div id="response">
     <pre></pre>
 </div>
 
-<form id="my-form">
+<form id="my-form" style = "text-align: center;">
     <input type="text" name="title" placeholder="Title" />
     <input type="text" name="director" placeholder="Director" />
     <input type="text" name="genre" placeholder="Genre" />
 
     <button type="submit">Submit</button>
 </form>
-<div>
+<br>
+<br>
+<br>
+<div style = "text-align: center;>">
     <h5>Available Movies</h5>
 </div>
 
 <div>
-    <table id ="allMoviesTable" style="border: solid">
-        <tr>
-            <th>Title</th>
-            <th>Director</th>
-            <th>Genre</th>
-            <th>Action</th>
-        </tr>
+    
+    
+    <table id = "allMoviesTable" class = "table table-dark">  
+        <thead> 
+            <tr>
+                <th scope = "col">Title</th>
+                <th scope = "col">Director</th>
+                <th scope= "col">Genre</th>
+                <th scope = "col">Action</th>
+             </tr>
+        </thead>
+        <tbody>
+            <tr class = "table-active"></tr>
+            <th scope = "row"> </th>
+        </tbody>
+       
     </table>
-</div>
+       
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="./app.js"></script>

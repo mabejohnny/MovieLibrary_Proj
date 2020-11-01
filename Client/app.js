@@ -26,7 +26,7 @@
 
 $('#my-form').submit( processForm );
 
-})
+})(jQuery)
 $(document).ready(
     
     getMovies());
@@ -34,7 +34,7 @@ $(document).ready(
 
 function editMovie(id){
     
-    var person = new Object();
+    
     let title =prompt("please enter the movie title");
     let director =prompt ("please enter the movie director");
     let genre =prompt("please enter the movie genre");
