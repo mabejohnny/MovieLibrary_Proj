@@ -13,7 +13,6 @@
             contentType: 'application/json',
             data: JSON.stringify(dict),
             success: function( data, textStatus, jQxhr ){
-                console.log("success");
                 $('#response pre').html( data );
             },
             error: function( jqXhr, textStatus, errorThrown ){
@@ -25,6 +24,7 @@
     }
 
 $('#my-form').submit( processForm );
+
 
 })(jQuery)
 $(document).ready(
