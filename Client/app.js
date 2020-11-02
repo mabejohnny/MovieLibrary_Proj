@@ -3,7 +3,8 @@
         var dict = {
         	Title : this["title"].value,
             Director: this["director"].value,
-            Genre: this["genre"].value
+            Genre: this["genre"].value,
+            Image: this["image"].value
         };
 
         $.ajax({
@@ -38,10 +39,12 @@ function editMovie(id){
     let title =prompt("please enter the movie title");
     let director =prompt ("please enter the movie director");
     let genre =prompt("please enter the movie genre");
+    let image = prompt("please enter the url for the image")
     var dict = {
         Title: title,
         Director: director,
-        Genre: genre
+        Genre: genre,
+        Image: image
     };
 
     
@@ -71,9 +74,7 @@ function getMovies(){
         dataType: 'json',
         type: 'get',
         contentType: 'application/json',
-        success: function( data, textStatus, jQxhr ){
-            //$('#response pre').html( JSON.stringify(data) );
-            
+        success: function( data, textStatus, jQxhr ){   
             data.map(function(value){
                 
                 $("#allMoviesTable").append(
@@ -84,6 +85,7 @@ function getMovies(){
                         <td>
                             <button onclick ='editMovie(${value.movieId})'>Edit</button>
                         </td>
+                        <td id = "image"> <img src= "${value.image}"></td>
                     </tr>`
                 )
             })
