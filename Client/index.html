@@ -34,12 +34,25 @@
 <br>
 <br>
 <div style = "text-align: center;">
-    <h5>Available Movies</h5>
+    <h5>Search Movies</h5>
 </div>
+<br>
+<br>
+<div style = "text-align: center;">
+    
+    <input type="text" id="titleInput" onkeyup="titleSearch()" placeholder="Search by title.." title="Type in a title">
+    <input type="text" id="directorInput" onkeyup="directorSearch()" placeholder="Search by director.." title="Type in a director">
+    <input type="text" id="genreInput" onkeyup="genreSearch()" placeholder="Search by genre.." title="Type in a genre">
+    <br>
+    <br>
+    <br>
+    <div style = "text-align: center;">
+        <h5>Available Movies</h5>
+    </div>
+    <br>
+    <br> 
+      
 
-<div>
-    
-    
     <table id = "allMoviesTable" class = "table table-dark">  
         <thead> 
             <tr>
