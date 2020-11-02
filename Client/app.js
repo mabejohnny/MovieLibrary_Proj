@@ -53,8 +53,8 @@ function editMovie(id){
         contentType: 'application/json',
         data: JSON.stringify(dict),
         success: function(data, textStatus, jQxhr ){
-            console.log(movieId);
-           alert("movie has been edited");
+            $('#allMoviesTable').html( data );
+           getMovies();
             
         },       
         error: function( jqXhr, textStatus, errorThrown ){
