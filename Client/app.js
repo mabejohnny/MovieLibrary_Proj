@@ -142,10 +142,11 @@ function getMovies(){
                         <td>${value.title}</td>
                         <td>${value.director}</td>
                         <td>${value.genre}</td>
+                        <td> <img src= "${value.image}" alt=" Movie Poster" width: "auto" height= "100 px"></td>
                         <td>
                             <button onclick ='editMovie(${value.movieId})'>Edit</button>
                         </td>
-                        <td> <img src= "${value.image}" alt=" Movie Poster" width: "auto" height= "100 px"></td>
+                        
                     </tr>`
                 )
             })
