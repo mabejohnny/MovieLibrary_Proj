@@ -85,7 +85,7 @@ function getMovies(){
                         <td>
                             <button onclick ='editMovie(${value.movieId})'>Edit</button>
                         </td>
-                        <td id = "image"> <img src= "${value.image}"></td>
+                        <td> <img src= "${value.image}" alt=" Movie Poster" width: "auto" height= "100 px"></td>
                     </tr>`
                 )
             })
